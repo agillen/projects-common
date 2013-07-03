@@ -10,9 +10,10 @@ records = list(SeqIO.parse(fastafile, "fasta"))
 fastafile.close()
 for i in range(0,len(records)):
 	if seq in records[i].seq:
-		fields = records[i].description.split(" ")		
-		bedi = fields[1].translate(string.maketrans(':-','\t\t'))
-		bed.append(bedi.replace("range=","")+"\t"+str(fields[0])+"\t0\t"+str(fields[4].replace("strand=","")))
+#		fields = records[i].description.split(" ")		
+		bedi = records[i].id.translate(string.maketrans(':-','\t\t'))
+		bedi = bedi.replace(")","")
+		bed.append(bedi.replace("(","\t.\t0\t"))
 for item in bed:
 	print item
 

@@ -14,10 +14,10 @@ def rc(dna):
 	return dna.translate(string.maketrans('ACGTU','TGCAA'))[::-1]
 totallen = 0
 for ln in range(0,len(targets)):
-	totallen += len(targets[ln].seq) - 5
+	totallen += len(targets[ln].seq) - 6
 print "Total Sequences:",len(targets)
-print "Total 6mers:",totallen
-print "microRNA\tSeed+1\tPresent(seq)\tAbsent(seq)\tPresent(6mer)\tAbsent(6mer)"
+print "Total 7mers:",totallen
+print "microRNA\tSeed+1\tPresent(seq)\tAbsent(seq)\tPresent(7mer)\tAbsent(7mer)"
 for k in range(0,len(mirseeds)):
 	count = 0
 	count2 = 0
